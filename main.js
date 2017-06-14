@@ -1,7 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Hello from './src/hello.jsx';
-import World from './src/world.jsx';
+import HelloWorld from './src/HelloWorld.jsx';
 
-ReactDOM.render(<span><Hello/> <World/></span>, document.getElementById('helloWorld'));
-ReactDOM.render(<span><Hello text="Greetings"/> <World text="Humans"/></span>, document.getElementById('greetingsHuman'));
+// emulate a companies possible namespace that'd contain whatever's neccessary
+// for the current page to run.
+const bizLib = {
+  components: {
+    HelloWorld: HelloWorld
+  }
+};
+
+export default bizLib;

@@ -3,13 +3,25 @@ var webpack = require('webpack');
  
 module.exports = {
   entry: './main.js',
-  output: { path: __dirname, filename: 'bundle.js' },
+  output: { 
+    filename: 'bundle.js',
+    library: 'bizNamespace',
+    libraryTarget: 'umd',
+    path: __dirname,
+    publicPath: '/virtual/',
+    umdNamedDefine: true
+  },
   module: {
     loaders: [
       {
         test: /.jsx?$/,
         loader: 'babel-loader',
-        exclude: /node_modules/,
+        exclude: [
+          /node_modules/
+        ],
+        include: [
+          path.resolve(__dirname, './src'),
+        ],
         query: {
           presets: ['es2015', 'react']
         }
