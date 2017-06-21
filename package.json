@@ -6,6 +6,7 @@
   "scripts": {
     "postinstall": "bash ./.bin/npm-postinstall.sh",
     "start": "webpack-dev-server --progress --colors --content-base ./public",
+    "compile": "webpack --progress --colors",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

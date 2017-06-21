@@ -1,4 +1,4 @@
-var components = bizNamespace.default.components;
+var components = bizNamespace.components;
 var container = React.createElement('div', { className:'container' },
   React.createElement(components.HelloWorld),
   React.createElement('br'),
