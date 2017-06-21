@@ -2,13 +2,20 @@ var path = require('path');
 var webpack = require('webpack');
  
 module.exports = {
-  entry: './main.js',
+  entry: {
+    components: './components.js'
+  },
+  externals: {
+    'react': 'React',
+    'react-dom': 'ReactDOM',
+    'prop-types': 'PropTypes',
+  },
   output: { 
-    filename: 'bundle.js',
-    library: 'bizNamespace',
+    filename: 'bizNamespace.[name].js',
+    library: ['bizNamespace', '[name]'], // expose exported item to window
     libraryTarget: 'umd',
-    path: __dirname,
-    publicPath: '/virtual/',
+    path: path.resolve(__dirname, './public/js'),
+    publicPath: '/public/js',
     umdNamedDefine: true
   },
   module: {

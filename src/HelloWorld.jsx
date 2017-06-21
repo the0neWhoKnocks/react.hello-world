@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { string } from 'prop-types';
  
 class HelloWorld extends Component {
